@@ -1,0 +1,24 @@
+<div class="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+  <input
+    type="text"
+    class="form-control px-4 py-2 mb-6 border rounded-lg shadow-md w-80 placeholder-gray-500 text-center"
+    placeholder="Search"
+    [(ngModel)]="query"
+    id="listSearch"
+  />
+
+  <div
+    *ngFor="let lock of locked | LockFilter: query"
+    class="bg-white rounded-lg shadow-md p-6 mb-4 w-80 flex flex-col items-center"
+  >
+    <div class="flex items-center justify-center mb-4">
+      <input type="checkbox" class="check" id="{{lock.ID}}" />
+      <label [for]="lock.ID" class="ml-2 check-label text-blue-500 font-semibold"></label>
+    </div>
+
+    <h3 class="card-text name text-xl font-bold text-gray-700">{{lock.User}}</h3>
+    <h3 class="card-text auth text-gray-500">{{lock.AuthID}}</h3>
+    <h3 class="card-text form text-gray-500">{{lock.FormName}}</h3>
+    <h3 class="card-text win text-gray-500">{{lock.WinHandle}}</h3>
+  </div>
+</div>

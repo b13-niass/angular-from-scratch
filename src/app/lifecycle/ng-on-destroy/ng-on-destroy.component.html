@@ -1,0 +1,12 @@
+<div class="flex flex-col items-center p-6">
+  <h1 class="text-4xl font-bold text-blue-600 mb-6">{{ title }}</h1>
+
+  <button
+    (click)="toggleCounter()"
+    class="px-6 py-2 mb-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition duration-300"
+  >
+    Toggle Counter
+  </button>
+
+  <app-child-on-destroy *ngIf="showCounter"></app-child-on-destroy>
+</div>

@@ -1,0 +1,58 @@
+<div  class="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-6">
+
+  <h1 class="text-2xl font-bold mb-4">{{ title }}</h1>
+  <button (click)="toggleLoginStatus()" class="px-4 py-2 mb-4 bg-blue-500 text-white rounded-lg shadow-md">
+    {{ isLoggedIn ? 'Logout' : 'Login' }}
+  </button>
+  <div *ngIf="isLoggedIn; else loggedOut" class="text-green-500">
+    <p>Welcome, you are logged in!</p>
+  </div>
+  <ng-template #loggedOut>
+    <p class="text-red-500">You are logged out. Please log in to continue.</p>
+  </ng-template>
+  <ng-container *ngIf="isLoggedIn">
+
+    <div class="mb-6 w-full max-w-md">
+      <h2 class="text-xl font-semibold mb-2">Items List</h2>
+      <ul class="list-disc list-inside">
+        <li *ngFor="let item of items; let i = index" class="p-2 bg-white rounded shadow-md mb-2">
+          {{ i + 1 }}. {{ item }}
+        </li>
+      </ul>
+    </div>
+
+    <div class="mb-6 w-full max-w-md">
+      <h2 class="text-xl font-semibold mb-2">User Role: {{ userRole }}</h2>
+      <div [ngSwitch]="userRole">
+        <p *ngSwitchCase="'admin'" class="text-blue-500">You are an admin. Full access granted!</p>
+        <p *ngSwitchCase="'user'" class="text-yellow-500">You are a user. Limited access.</p>
+        <p *ngSwitchDefault class="text-red-500">Unknown role. No access.</p>
+      </div>
+    </div>
+
+    <div class="mb-6 w-full max-w-md">
+      <button (click)="toggleLoading()" class="px-4 py-2 bg-green-500 text-white rounded-lg shadow-md mb-2">
+        {{ isLoading ? 'Stop Loading' : 'Start Loading' }}
+      </button>
+      <div *ngIf="isLoading; else contentLoaded" class="p-4 bg-yellow-100 text-yellow-700 border border-yellow-500 rounded-md">
+        Loading...
+      </div>
+      <ng-template #contentLoaded>
+        <p class="p-4 bg-green-100 text-green-700 border border-green-500 rounded-md">Content loaded successfully!</p>
+      </ng-template>
+    </div>
+
+    <div class="mb-6 w-full max-w-md">
+      <button (click)="toggleSectionVisibility()" class="px-4 py-2 bg-purple-500 text-white rounded-lg shadow-md mb-2">
+        Toggle Section Visibility
+      </button>
+      <ng-container *ngIf="showSection">
+        <div class="p-4 bg-gray-100 text-gray-800 border border-gray-300 rounded-md">
+          <h2 class="text-xl font-semibold">Visible Section</h2>
+          <p>This section is conditionally rendered using ng-container.</p>
+        </div>
+      </ng-container>
+    </div>
+
+  </ng-container>
+</div>

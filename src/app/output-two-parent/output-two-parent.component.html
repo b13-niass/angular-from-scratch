@@ -1,0 +1,8 @@
+<div class="p-4 space-y-4">
+  <h1 class="text-xl font-bold text-blue-600">Parent Component</h1>
+  <app-output-two-child (firstValueEmitter)="handleFirstValue($event)"  (secondValueEmitter)="handleSecondValue($event)" ></app-output-two-child>
+  <div *ngIf="receivedValue1 && receivedValue2" class="p-4 bg-green-100 border border-green-500 rounded-lg">
+    <p><strong>Received Value 1:</strong> {{ receivedValue1 }}</p>
+    <p><strong>Received Value 2:</strong> {{ receivedValue2 }}</p>
+  </div>
+</div>
