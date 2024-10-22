@@ -1,0 +1,4 @@
+.control:focus{
+  outline: 3px red solid!important;
+  border: none;
+}
