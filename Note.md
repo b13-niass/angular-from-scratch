@@ -26,3 +26,20 @@ ng generate component
 npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
 
+## Standalone Components
+Ce sont des composants qui ne sont déclarés dans aucun NgModule.
+Ils sont autonomes et peuvent être utilisés n'importe où dans votre application sans
+qu'il soit nécessaire d'importer un NgModule.
+
+- Avantage: Charger nécessairement le composant (fully lazy-loaded)
+
+## Bindings
+- Interpolation
+- Property Binding
+- Attribute Binding
+- Class Binding
+- Style Binding
+- Event Binding
+- Two-Way Binding
+
+

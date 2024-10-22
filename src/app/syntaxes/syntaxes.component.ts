@@ -35,6 +35,7 @@ export class SyntaxesComponent {
       console.log('The user send : '+ (event.target as HTMLInputElement).value);
     }
   }
+
   onInputChangeEnterTwo(event: Event) {
     const input = event.target as HTMLInputElement;
     console.log(input.value);
