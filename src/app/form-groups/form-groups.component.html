@@ -1,0 +1,82 @@
+<div class="max-w-md mx-auto mt-10 p-6 bg-white shadow-md rounded-lg">
+  <h2 class="text-2xl font-semibold text-center mb-6">
+    Formulaire d'inscription
+  </h2>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="space-y-4">
+    <!-- Champ Nom -->
+    <div>
+      <label class="block text-sm font-semibold mb-1">Nom</label>
+      <input
+        type="text"
+        formControlName="name"
+        class="w-full p-2 border border-gray-300 rounded"
+        placeholder="Entrez votre nom"
+      />
+      <div
+        *ngIf="form.get('name')?.invalid && form.get('name')?.touched"
+        class="text-red-500 text-sm mt-1"
+      >
+        <span *ngIf="form.get('name')?.errors?.['required']"
+          >Le nom est requis.</span
+        >
+        <span *ngIf="form.get('name')?.errors?.['minlength']"
+          >Le nom doit contenir au moins 3 caractères.</span
+        >
+      </div>
+    </div>
+
+    <!-- Champ Email -->
+    <div>
+      <label class="block text-sm font-semibold mb-1">Email</label>
+      <input
+        type="email"
+        formControlName="email"
+        class="w-full p-2 border border-gray-300 rounded"
+        placeholder="Entrez votre email"
+      />
+      <div
+        *ngIf="form.get('email')?.invalid && form.get('email')?.touched"
+        class="text-red-500 text-sm mt-1"
+      >
+        <span *ngIf="form.get('email')?.errors?.['required']"
+          >L'email est requis.</span
+        >
+        <span *ngIf="form.get('email')?.errors?.['email']"
+          >L'email n'est pas valide.</span
+        >
+      </div>
+    </div>
+
+    <!-- Champ Mot de passe -->
+    <div>
+      <label class="block text-sm font-semibold mb-1">Mot de passe</label>
+      <input
+        type="password"
+        formControlName="password"
+        class="w-full p-2 border border-gray-300 rounded"
+        placeholder="Entrez votre mot de passe"
+      />
+      <div
+        *ngIf="form.get('password')?.invalid && form.get('password')?.touched"
+        class="text-red-500 text-sm mt-1"
+      >
+        <span *ngIf="form.get('password')?.errors?.['required']"
+          >Le mot de passe est requis.</span
+        >
+        <span *ngIf="form.get('password')?.errors?.['minlength']"
+          >Le mot de passe doit contenir au moins 6 caractères.</span
+        >
+      </div>
+    </div>
+
+    <!-- Bouton de soumission -->
+    <button
+      type="submit"
+      [disabled]="form.invalid"
+      class="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition disabled:bg-gray-400 disabled:cursor-not-allowed"
+    >
+      S'inscrire
+    </button>
+  </form>
+</div>

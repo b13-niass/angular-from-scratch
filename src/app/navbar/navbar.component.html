@@ -43,25 +43,51 @@
           </svg>
         </button>
       </div>
-      <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+      <div
+        class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start"
+      >
         <div class="flex-shrink-0">
           <h1 class="text-white text-2xl font-bold">Logo</h1>
         </div>
         <div class="hidden sm:block sm:ml-6">
           <div class="flex space-x-4">
-            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
-            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
+            <a
+              href="#"
+              class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+              >Home</a
+            >
+            <a
+              href="#"
+              class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+              >About</a
+            >
             <div class="relative" (click)="toggleDropdown()">
-              <button class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                Services
+              <button
+                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+              >
+                Dependency
               </button>
-              <div class="absolute bg-gray-800 text-white rounded-md shadow-lg mt-1 w-48" *ngIf="isDropdownOpen">
-                <a href="#" class="block px-4 py-2 hover:bg-gray-700">Service 1</a>
-                <a href="#" class="block px-4 py-2 hover:bg-gray-700">Service 2</a>
-                <a href="#" class="block px-4 py-2 hover:bg-gray-700">Service 3</a>
+              <div
+                class="absolute bg-gray-800 text-white rounded-md shadow-lg mt-1 w-48"
+                *ngIf="isDropdownOpen"
+              >
+                <a
+                  routerLink="/dep-inject1"
+                  class="block px-4 py-2 hover:bg-gray-700"
+                  >Dep-inject1</a
+                >
+                <a
+                  routerLink="/dep-inject2"
+                  class="block px-4 py-2 hover:bg-gray-700"
+                  >Dep-inject2</a
+                >
               </div>
             </div>
-            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+            <a
+              href="#"
+              class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+              >Contact</a
+            >
           </div>
         </div>
       </div>
@@ -71,10 +97,26 @@
   <!-- Mobile Menu, show/hide based on menu state. -->
   <div class="sm:hidden" id="mobile-menu">
     <div class="px-2 pt-2 pb-3 space-y-1">
-      <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
-      <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</a>
-      <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Services</a>
-      <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+      <a
+        href="#"
+        class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+        >Home</a
+      >
+      <a
+        href="#"
+        class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+        >About</a
+      >
+      <a
+        href="#"
+        class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+        >Services</a
+      >
+      <a
+        href="#"
+        class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+        >Contact</a
+      >
     </div>
   </div>
 </nav>

@@ -1,0 +1,47 @@
+<div class="min-h-screen flex flex-col items-center justify-center p-6">
+  <h1 class="text-3xl font-bold text-blue-600 mb-4">{{ title }}</h1>
+
+  <!-- Section for displaying data -->
+  <div *ngIf="data$ | async as data; else loading" class="mb-6 w-full max-w-md">
+    <h2 class="text-xl font-semibold mb-2">All Items</h2>
+    <ul class="list-disc list-inside">
+      <li *ngFor="let item of data" class="p-2 bg-white rounded shadow-md mb-2">
+        {{ item.name }} ({{ item.category }})
+        <button
+          (click)="getItemDetails(item.id)"
+          class="ml-4 px-4 py-1 bg-blue-500 text-white rounded-md"
+        >
+          Get Details
+        </button>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Loading message while data is being fetched -->
+  <ng-template #loading>
+    <p class="text-gray-500">Loading...</p>
+  </ng-template>
+
+  <!-- Filtered Data Section -->
+  <div class="mb-6 w-full max-w-md">
+    <h2 class="text-xl font-semibold mb-2">Filtered (Fruits)</h2>
+    <ul *ngIf="filteredData" class="list-disc list-inside">
+      <li
+        *ngFor="let item of filteredData"
+        class="p-2 bg-green-100 rounded shadow-md mb-2"
+      >
+        {{ item.name }}
+      </li>
+    </ul>
+  </div>
+
+  <!-- Selected Item Details -->
+  <div
+    *ngIf="selectedItem"
+    class="p-4 bg-yellow-100 text-yellow-700 border border-yellow-500 rounded-md"
+  >
+    <h3 class="text-xl font-semibold">Item Details</h3>
+    <p>Name: {{ selectedItem.name }}</p>
+    <p>Category: {{ selectedItem.category }}</p>
+  </div>
+</div>

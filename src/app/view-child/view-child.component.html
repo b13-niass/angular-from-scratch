@@ -1,0 +1,12 @@
+<div class="p-4 border rounded-md">
+  <h2 class="text-lg font-bold">Composant Parent</h2>
+  <button
+    class="px-4 py-2 bg-green-500 text-white font-semibold rounded-md hover:bg-green-700 transition"
+    (click)="incrementChildValue()"
+  >
+    Incrémenter la valeur de l'enfant
+  </button>
+
+  <!-- Inclure le composant enfant ici -->
+  <app-sub-view-child></app-sub-view-child>
+</div>

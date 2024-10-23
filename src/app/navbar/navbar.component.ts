@@ -1,15 +1,13 @@
 import { Component } from '@angular/core';
-import {NgIf} from '@angular/common';
+import { NgIf } from '@angular/common';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [
-    NgIf
-
-  ],
+  imports: [RouterLink, RouterLinkActive, NgIf],
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.css'
+  styleUrl: './navbar.component.css',
 })
 export class NavbarComponent {
   isDropdownOpen = false;
@@ -17,5 +15,4 @@ export class NavbarComponent {
   toggleDropdown() {
     this.isDropdownOpen = !this.isDropdownOpen;
   }
-
 }
